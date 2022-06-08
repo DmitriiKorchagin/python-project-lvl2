@@ -9,4 +9,3 @@ coverage.xml
 .vim
 .DS_Store
 gendiff/.DS_Store
-tests/

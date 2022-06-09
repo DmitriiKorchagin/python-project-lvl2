@@ -1,11 +1,33 @@
 import json
+import yaml
+try:
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader
+from pathlib import Path
 
 
-def generate_diff(file_path1, file_path2):
+def generate_diff(file_path1, file_path2):    # noqa: C901
     with open(file_path1, 'r') as file1:
-        data1 = json.load(file1)
+        if Path(file_path1).suffix == '.json':
+            data1 = json.load(file1)
+        elif Path(file_path1).suffix == '.yaml' \
+                or Path(file_path1).suffix == '.yml':
+            data1 = yaml.load(file1, Loader=Loader)
+        else:
+            print("Error: uncorrect extension in file! \
+                  (not *.json, *.yaml, *.yml)")
+            # TODO нужно остановить выполнение скрипта!
     with open(file_path2, 'r') as file2:
-        data2 = json.load(file2)
+        if Path(file_path2).suffix == '.json':
+            data2 = json.load(file2)
+        elif Path(file_path2).suffix == '.yaml' \
+                or Path(file_path2).suffix == '.yml':
+            data2 = yaml.load(file2, Loader=Loader)
+        else:
+            print("Error: uncorrect extension in file! \
+                  (not *.json, *.yaml, *.yml)")
+            # TODO нужно остановить выполнение скрипта!
 
     sort_list_1 = sorted(data1)  # sorted key list in json file1
     sort_list_2 = sorted(data2)

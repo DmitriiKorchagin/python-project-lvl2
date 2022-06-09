@@ -9,3 +9,4 @@
 [![Actions Status](https://github.com/DmitriiKorchagin/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/DmitriiKorchagin/python-project-lvl2/actions)
 ___
 [![asciicast](https://asciinema.org/a/PdS7P5RKwgOyfO0fkdb32xX6i.svg)](https://asciinema.org/a/PdS7P5RKwgOyfO0fkdb32xX6i)
+[![asciicast](https://asciinema.org/a/nVMxOcAGjpNJxuAmohYxRUtAz.svg)](https://asciinema.org/a/nVMxOcAGjpNJxuAmohYxRUtAz)
